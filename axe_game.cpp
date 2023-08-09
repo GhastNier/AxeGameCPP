@@ -31,8 +31,8 @@ int main()
     int uAxeY{axeY};
     int bAxeY{axeY + axeLength};
     int moveAxe{10};
-    bool colisionIsTrue;
-    colisionIsTrue =
+    bool collisionIsTrue;
+    collisionIsTrue =
         (bAxeY >= uCircleY) &&
         (uAxeY <= bCircleY) &&
         (lAxeX <= rCircleX) &&
@@ -42,7 +42,7 @@ int main()
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        if (colisionIsTrue)
+        if (collisionIsTrue)
         {
             ClearBackground(BLACK);
             DrawText("Game Over... \nGIT GUD!", 300, 125, 40, RED);
@@ -64,7 +64,7 @@ int main()
                 (lAxeX <= rCircleX) &&
                 (rAxeX >= lCircleX))
             {
-                colisionIsTrue = true;
+                collisionIsTrue = true;
             }
             DrawCircle(circleX, circleY, circleRadius, BLUE);
             DrawRectangle(axeX, axeY, axeLength, axeLength, RED);
@@ -90,13 +90,13 @@ int main()
             {
                 circleY += moveCircle;
             }
-            if (colisionIsTrue)
+            if (collisionIsTrue)
             {
-                colisionIsTrue = true;
+                collisionIsTrue = true;
             }
             else
             {
-                colisionIsTrue = false;
+                collisionIsTrue = false;
             }
         }
         EndDrawing();
